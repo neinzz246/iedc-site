@@ -1,71 +1,45 @@
-import React, { useState } from "react";
-import Slider from "react-slick";
-import eventsData from "../data/eventsData";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import React, { useState, useRef } from "react";
+// Correct import
+import eventsData from "../data/eventsData.js";
 import "./EventsSection.css";
 
-// Custom Arrows
-const NextArrow = ({ onClick }) => (
-  <div className="slick-arrow next" onClick={onClick}>
-    &#10095;
-  </div>
-);
-
-const PrevArrow = ({ onClick }) => (
-  <div className="slick-arrow prev" onClick={onClick}>
-    &#10094;
-  </div>
-);
-
-export default function EventsSection() {
+export default function Events() {
   const [activeTab, setActiveTab] = useState("upcoming");
+  const scrollRef = useRef(null);
 
-  const filteredEvents = eventsData.filter(event => event.type === activeTab);
-
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 600,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    arrows: true,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
-    centerMode: true,
-    centerPadding: "20px",
-    responsive: [
-      { breakpoint: 900, settings: { slidesToShow: 2 } },
-      { breakpoint: 600, settings: { slidesToShow: 1 } },
-    ],
+  const scroll = (direction) => {
+    const container = scrollRef.current;
+    const scrollAmount = container.offsetWidth * 0.8;
+    if (direction === "left") container.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+    else container.scrollBy({ left: scrollAmount, behavior: "smooth" });
   };
 
+  const eventsToShow = eventsData.filter(event => event.type === activeTab);
+
   return (
-    <section id="events" className="events-section">
-      <div className="container">
-        <h2 className="section-title">Our Events</h2>
+    <section className="events-section" id="events">
+      <h2 className="section-title">Our Events</h2>
 
-        {/* Tabs */}
-        <div className="tabs">
-          <button
-            className={activeTab === "upcoming" ? "active" : ""}
-            onClick={() => setActiveTab("upcoming")}
-          >
-            Upcoming Events
-          </button>
-          <button
-            className={activeTab === "past" ? "active" : ""}
-            onClick={() => setActiveTab("past")}
-          >
-            Past Events
-          </button>
-        </div>
+      <div className="tabs">
+        <button
+          className={activeTab === "upcoming" ? "active" : ""}
+          onClick={() => setActiveTab("upcoming")}
+        >
+          Upcoming
+        </button>
+        <button
+          className={activeTab === "past" ? "active" : ""}
+          onClick={() => setActiveTab("past")}
+        >
+          Past
+        </button>
+      </div>
 
-        {/* Carousel */}
-        <Slider {...settings}>
-          {filteredEvents.map(event => (
+      <div className="carousel-wrapper">
+        <button className="carousel-btn prev" onClick={() => scroll("left")}>&lt;</button>
+
+        <div className="events-container" ref={scrollRef}>
+          {eventsToShow.map(event => (
             <div className="event-card" key={event.id}>
               <img src={event.image} alt={event.title} />
               <h3>{event.title}</h3>
@@ -73,7 +47,9 @@ export default function EventsSection() {
               <p className="event-desc">{event.description}</p>
             </div>
           ))}
-        </Slider>
+        </div>
+
+        <button className="carousel-btn next" onClick={() => scroll("right")}>&gt;</button>
       </div>
     </section>
   );

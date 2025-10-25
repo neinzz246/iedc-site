@@ -4,9 +4,9 @@ import "./Footer.css";
 
 export default function Footer() {
   return (
-    <footer className="footer">
+    <footer id="contact" className="footer">
       <div className="container footer-grid">
-        {/* Left section */}
+        {/* Contact Section */}
         <div className="footer-contact">
           <h3 className="footer-heading">Contact Us</h3>
           <p className="footer-description">
@@ -29,20 +29,32 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Right section */}
+        {/* Social Section */}
         <div className="footer-social">
           <h3 className="footer-heading">Stay Connected</h3>
           <p className="footer-description">
             Follow us for updates, events, and opportunities.
           </p>
           <div className="social-links">
-            <a href="https://instagram.com/your_insta" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://instagram.com/your_insta"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FaInstagram />
             </a>
-            <a href="https://linkedin.com/in/your_linkedin" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://linkedin.com/in/your_linkedin"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FaLinkedin />
             </a>
-            <a href="https://chat.whatsapp.com/your_community_link" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://chat.whatsapp.com/your_community_link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FaWhatsapp />
             </a>
           </div>

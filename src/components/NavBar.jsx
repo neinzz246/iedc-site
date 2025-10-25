@@ -8,7 +8,7 @@ export default function NavBar() {
         <a href="#events">Events</a>
         <a href="#startup-stories">Startup Stories</a>
         <a href="#our-team">Our Team</a>
-        <a href="#contact">Contact Us</a>
+        <a href="#contact">Contact Us</a> {/* Corrected */}
       </div>
     </nav>
   );

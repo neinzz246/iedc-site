@@ -8,6 +8,7 @@
   --radius: 6px;
   color-scheme: dark;
 }
+
 html {
   scroll-behavior: smooth;
 }
@@ -68,7 +69,7 @@ body {
   margin: 0;
   font-size: 46px;
   font-weight: 900;
-  color: #fff; /* White title */
+  color: #fff;
   letter-spacing: 2px;
   text-transform: uppercase;
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.5),
@@ -98,20 +99,16 @@ body {
 
 /* Nav */
 .nav {
-  background: #121212;
-  border-top: 1px solid rgba(255, 255, 255, 0.02);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  background: transparent; /* Removed dark background */
 }
 
 .nav-inner {
   display: flex;
-  justify-content: center;  /* ✅ centers all nav links */
-  gap: 36px;                /* slightly increased spacing */
+  justify-content: center;  /* centers all nav links */
+  gap: 36px;
   align-items: center;
   padding: 0.5rem 0;
 }
-
-
 
 .nav a {
   position: relative;
@@ -173,12 +170,12 @@ body {
   line-height: 1.6;
   font-size: 17px;
 }
+
 .site-title {
   font-size: 45px;
   font-weight: 700;
   color: white;
   letter-spacing: 3px;
-  
 }
 
 .typewriter::after {
@@ -194,10 +191,9 @@ body {
   }
 }
 
-/* "Got an Idea?" as button */
+/* "Got an Idea?" button */
 .hero-sub {
   display: inline-block;
-  background: var(--accent);
   background: #a27fc7;
   color: #fff;
   padding: 10px 28px;
@@ -208,7 +204,7 @@ body {
   letter-spacing: 1px;
   text-shadow: none;
   transition: all 0.3s ease;
-  text-decoration: none; /* ✅ removes underline */
+  text-decoration: none;
 }
 
 .hero-sub:hover {
@@ -238,7 +234,7 @@ body {
   transform: scale(1.05);
 }
 
-/* teaser cards row on right */
+/* teaser cards row */
 .teaser-row {
   display: flex;
   gap: 16px;
@@ -314,7 +310,7 @@ body {
 
 .mission-btn {
   background: transparent;
-  color:#ffff;
+  color: #fff;
   border: none;
   font-size: 18px;
   width: 80%;
@@ -358,7 +354,7 @@ body {
   color: var(--muted);
 }
 
-/* small screens */
+/* Responsive styles */
 @media (max-width: 900px) {
   .teaser-row {
     width: 100%;
@@ -373,5 +369,80 @@ body {
   }
   .site-title {
     font-size: 34px;
+  }
+}
+
+/* Mobile fixes for buttons, navbar, hero */
+@media (max-width: 768px) {
+  .nav-inner {
+    flex-wrap: wrap;          /* allow wrapping if needed */
+    justify-content: center;  /* center links */
+    gap: 16px;                /* smaller gap for mobile */
+    padding: 8px 0;
+  }
+
+  .nav a {
+    font-size: 15px;          /* smaller font for mobile */
+    padding: 8px 12px; 
+   /* allow shrinking */
+  text-align: center;       /* compact padding */
+  }
+.nav a:hover {
+  color: var(--accent);
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+
+/* Hero stacks vertically */
+   .hero {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+    padding: 40px 0;
+  }
+
+  .hero-left {
+    width: 100%;
+  }
+
+  .hero-sub {
+    font-size: 20px;
+    padding: 8px 20px;
+  }
+
+  .cta {
+    font-size: 16px;
+    padding: 8px 18px;
+  }
+
+  /* Teaser cards row */
+  .teaser-row {
+    width: 100%;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  /* Mission grid single column */
+  .missions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Site title smaller */
+  .site-title {
+    font-size: 32px;
   }
 }
