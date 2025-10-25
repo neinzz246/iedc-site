@@ -1,0 +1,103 @@
+const eventsData = [
+  // Upcoming Events
+  {
+    id: 1,
+    title: "Tech Workshop 2025",
+    date: "2025-11-10",
+    image: "/assets/events/tech-workshop.png",
+    description: "A hands-on workshop on latest tech trends and innovations.",
+    type: "upcoming",
+  },
+  {
+    id: 2,
+    title: "Annual Science Fest",
+    date: "2025-12-05",
+    image: "/assets/events/science-fest.png",
+    description: "Celebrating innovation, research, and experiments by students.",
+    type: "upcoming",
+  },
+  {
+    id: 5,
+    title: "Entrepreneurship Webinar",
+    date: "2025-11-25",
+    image: "/assets/events/entrepreneurship-webinar.png",
+    description: "Learn how to start and scale your startup with industry experts.",
+    type: "upcoming",
+  },
+  {
+    id: 6,
+    title: "Robotics Workshop",
+    date: "2025-12-15",
+    image: "/assets/events/robotics-workshop.png",
+    description: "Hands-on robotics workshop for students interested in automation.",
+    type: "upcoming",
+  },
+  {
+    id: 7,
+    title: "AI & ML Bootcamp",
+    date: "2025-12-22",
+    image: "/assets/events/ai-ml-bootcamp.png",
+    description: "Intensive bootcamp covering AI, ML, and data science basics.",
+    type: "upcoming",
+  },
+  {
+    id: 8,
+    title: "Green Tech Hackathon",
+    date: "2025-11-30",
+    image: "/assets/events/green-tech-hackathon.png",
+    description: "Hackathon focusing on sustainable and green technology solutions.",
+    type: "upcoming",
+  },
+
+  // Past Events
+  {
+    id: 3,
+    title: "Coding Hackathon 2024",
+    date: "2024-08-20",
+    image: "/assets/events/hackathon.png",
+    description: "A competitive coding event with prizes for winners.",
+    type: "past",
+  },
+  {
+    id: 4,
+    title: "AI Seminar",
+    date: "2024-06-15",
+    image: "/assets/events/ai-seminar.png",
+    description: "An insightful seminar on Artificial Intelligence trends.",
+    type: "past",
+  },
+  {
+    id: 9,
+    title: "Startup Networking Night",
+    date: "2024-09-10",
+    image: "/assets/events/networking-night.png",
+    description: "An evening to connect with local startups and investors.",
+    type: "past",
+  },
+  {
+    id: 10,
+    title: "Tech Talk: Cloud Computing",
+    date: "2024-07-25",
+    image: "/assets/events/cloud-talk.png",
+    description: "Expert talk on cloud computing trends and practices.",
+    type: "past",
+  },
+  {
+    id: 11,
+    title: "Web Dev Bootcamp",
+    date: "2024-05-30",
+    image: "/assets/events/webdev-bootcamp.png",
+    description: "Intensive bootcamp on modern web development technologies.",
+    type: "past",
+  },
+  {
+    id: 12,
+    title: "Innovation Day 2024",
+    date: "2024-08-05",
+    image: "/assets/events/innovation-day.png",
+    description: "Showcase of student innovations and prototypes.",
+    type: "past",
+  },
+];
+
+export default eventsData;

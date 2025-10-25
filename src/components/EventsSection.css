@@ -1,0 +1,116 @@
+.events-section {
+  background: var(--bg, #111);
+  color: #fff;
+  padding: 60px 20px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.tabs button {
+  background: transparent;
+  border: 2px solid var(--accent, #f0b600);
+  padding: 10px 20px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 50px; /* fully rounded */
+  transition: all 0.3s ease;
+}
+
+.tabs button.active,
+.tabs button:hover {
+  background: var(--accent, #f0b600);
+  color: #111;
+}
+
+/* Event Cards */
+.event-card {
+  background: var(--panel, #1b1b1b);
+  border-radius: 16px;
+  padding: 22px 16px;
+  text-align: center;
+  margin: 0 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 25px rgba(240, 182, 0, 0.45);
+}
+
+.event-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.event-card h3 {
+  font-size: 18px;
+  margin: 6px 0;
+}
+
+.event-date {
+  color: var(--muted, #bbb);
+  font-size: 14px;
+  margin: 4px 0;
+}
+
+.event-desc {
+  font-size: 14px;
+  color: #fff;
+  margin-top: 4px;
+}
+
+/* Slick Arrows - custom style */
+.slick-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  font-size: 22px;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: transparent; /* transparent background */
+  border: 2px solid var(--accent, #f0b600); /* yellow outline */
+  color: #f0b600; /* arrow color black */
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.slick-arrow:hover {
+  background: var(--accent, #f0b600); /* fill yellow on hover */
+  color: #111; /* arrow stays black */
+  transform: translateY(-50%) scale(1.1);
+}
+
+.slick-arrow.prev {
+  left: -25px;
+}
+
+.slick-arrow.next {
+  right: -25px;
+}
+
+
+/* Adjust spacing for slides */
+.slick-slide > div {
+  margin: 0 10px;
+}

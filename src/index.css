@@ -1,0 +1,377 @@
+:root {
+  --bg: #111;
+  --panel: #1b1b1b;
+  --accent: #f0b600; /* yellow */
+  --muted: #bbb;
+  --container-width: 1100px;
+  --gap: 18px;
+  --radius: 6px;
+  color-scheme: dark;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: #eee;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+/* container */
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* Header */
+.site-header {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* logo */
+.logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  background: #000;
+  padding: 6px;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(240, 182, 0, 0.4);
+}
+
+/* IEDC MACE Pop Title */
+.site-title {
+  margin: 0;
+  font-size: 46px;
+  font-weight: 900;
+  color: #fff; /* White title */
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5),
+               0 0 20px rgba(240, 182, 0, 0.3),
+               0 0 35px rgba(240, 182, 0, 0.4);
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.site-title:hover {
+  transform: scale(1.05);
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.8),
+               0 0 40px rgba(240, 182, 0, 0.6);
+}
+
+.tagline {
+  color: var(--muted);
+  margin-top: 6px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.sep {
+  opacity: 0.3;
+  margin: 0 6px;
+}
+
+/* Nav */
+.nav {
+  background: #121212;
+  border-top: 1px solid rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.nav-inner {
+  display: flex;
+  justify-content: center;  /* ✅ centers all nav links */
+  gap: 36px;                /* slightly increased spacing */
+  align-items: center;
+  padding: 0.5rem 0;
+}
+
+
+
+.nav a {
+  position: relative;
+  color: #ddd;
+  text-decoration: none;
+  padding: 16px 4px;
+  font-weight: 500;
+  letter-spacing: 0.6px;
+  transition: color 0.3s ease;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.nav a:hover {
+  color: var(--accent);
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+/* Page & scroll snapping */
+.page {
+  scroll-snap-type: y mandatory;
+  overflow-y: auto;
+  min-height: calc(100vh - 180px);
+}
+
+.snap-section {
+  scroll-snap-align: start;
+  padding: 48px 0;
+}
+
+/* Hero */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 60px 0;
+}
+
+.hero-left {
+  flex: 1.2;
+}
+
+.hero-text {
+  color: var(--muted);
+  max-width: 540px;
+  line-height: 1.6;
+  font-size: 17px;
+}
+.site-title {
+  font-size: 45px;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 3px;
+  
+}
+
+.typewriter::after {
+  content: "|";
+  color: #fff;
+  margin-left: 5px;
+  animation: blink 0.6s step-end infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* "Got an Idea?" as button */
+.hero-sub {
+  display: inline-block;
+  background: var(--accent);
+  background: #a27fc7;
+  color: #fff;
+  padding: 10px 28px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: none;
+  transition: all 0.3s ease;
+  text-decoration: none; /* ✅ removes underline */
+}
+
+.hero-sub:hover {
+  background: #ffff;
+  color: black;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(240, 182, 0, 0.4);
+}
+
+/* CTA button */
+.cta {
+  display: inline-block;
+  margin-top: 22px;
+  background: transparent;
+  color: var(--accent);
+  padding: 10px 22px;
+  border: 2px solid var(--accent);
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.cta:hover {
+  background: var(--accent);
+  color: #111;
+  transform: scale(1.05);
+}
+
+/* teaser cards row on right */
+.teaser-row {
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+  align-items: stretch;
+  width: 420px;
+}
+
+.teaser {
+  background: var(--accent);
+  color: #111;
+  padding: 22px;
+  border-radius: 10px;
+  font-weight: 600;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.teaser:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(240, 182, 0, 0.4);
+}
+
+/* Missions grid */
+.mission-section {
+  padding-top: 6px;
+}
+
+.section-title {
+  text-align: center;
+  margin: 6px 0 18px;
+  font-size: 28px;
+  color: #fff;
+}
+
+.missions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  align-items: start;
+}
+
+/* mission card */
+.mission-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.mission-box {
+  background: var(--panel);
+  border-radius: 12px 12px 0 0;
+  overflow: hidden;
+}
+
+.mission-short {
+  background: var(--accent);
+  padding: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #111;
+  min-height: 110px;
+  border-radius: 12px 12px 0 0;
+}
+
+.mission-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px;
+  background: #0f0f0f;
+  border-radius: 0 0 12px 12px;
+}
+
+.mission-btn {
+  background: transparent;
+  color:#ffff;
+  border: none;
+  font-size: 18px;
+  width: 80%;
+  text-align: left;
+  cursor: pointer;
+}
+
+.arrow {
+  background: var(--accent);
+  border: none;
+  padding: 8px 14px;
+  border-radius: 50%;
+  font-weight: 700;
+  color: black;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.arrow:hover {
+  background: #ffca28;
+  transform: scale(1.1);
+}
+
+/* mission details */
+.mission-detail {
+  background: #0f0f0f;
+  padding: 14px;
+  border-radius: 0 0 12px 12px;
+  color: var(--muted);
+}
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  padding: 18px 0;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: center;
+  color: var(--muted);
+}
+
+/* small screens */
+@media (max-width: 900px) {
+  .teaser-row {
+    width: 100%;
+    flex-direction: row;
+  }
+  .missions-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+  .site-title {
+    font-size: 34px;
+  }
+}
