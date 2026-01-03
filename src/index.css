@@ -111,18 +111,6 @@ body {
 
 
 
-.i-dot .dot {
-  position: absolute;
-  top: 0.31em;      /* dot moved slightly down from -4px */
-  left: 48%;     /* slightly left */
-  transform: translateX(-50%);
-  width: 0.24em;
-  height: 0.24em;
-  border-radius: 50%;
-  background-color: #f0b600; /* yellow dot */
-}
-
-
 
 
 
