@@ -77,7 +77,7 @@ const teamData = [
   // Web
   { id: 42, name: "Nayana", position: "Web Team", photo: "/assets/team/nayana.jpg", team: "Web Team" },
   { id: 43, name: "Aparna", position: "Web Team", photo: "/assets/team/aparna.jpg", team: "Web Team" },
-  { id: 44, name: "Isha", position: "Web Team", photo: "/assets/team/isha.jpg", team: "Web Team" },
+  { id: 44, name: "Esha", position: "Web Team", photo: "/assets/team/esha.jpg", team: "Web Team" },
 
   /* ============================
          PROGRAM COMMITTEE

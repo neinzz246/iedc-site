@@ -1,37 +1,42 @@
 import React, { useEffect, useState } from "react";
 
-
 export default function Header() {
   const [text, setText] = useState("");
-  const fullText = "IEDC MACE";
   const typingSpeed = 150; // ms
   const pauseDuration = 1000; // pause before restarting
 
+  // ✅ Full text as array of elements
+  const fullTextArray = [
+    <span key="i" className="i-dot">
+      i<span className="dot"></span>
+    </span>,
+    "E", "D", "C", " ", "M", "A", "C", "E"
+  ];
+
   useEffect(() => {
-    let i = 0;
+    let index = 0;
     let forward = true;
 
     const type = () => {
       if (forward) {
-        if (i < fullText.length) {
-          setText(fullText.slice(0, i + 1));
-          i++;
+        if (index < fullTextArray.length) {
+          setText(fullTextArray.slice(0, index + 1));
+          index++;
+          setTimeout(type, typingSpeed);
         } else {
           forward = false;
-          setTimeout(type, pauseDuration);
-          return;
+          setTimeout(type, pauseDuration); // pause at full text
         }
       } else {
-        if (i > 0) {
-          setText(fullText.slice(0, i - 1));
-          i--;
+        if (index > 0) {
+          setText(fullTextArray.slice(0, index - 1));
+          index--;
+          setTimeout(type, typingSpeed);
         } else {
           forward = true;
           setTimeout(type, typingSpeed);
-          return;
         }
       }
-      setTimeout(type, typingSpeed);
     };
 
     type();
@@ -41,7 +46,6 @@ export default function Header() {
     <header className="site-header">
       <div className="header-inner container">
         <div className="logo-wrap">
-          {/* ✅ use absolute path since image is in public/assets */}
           <img src="/logo.png" alt="IEDC MACE" className="logo" />
         </div>
         <div className="title-wrap">
@@ -58,3 +62,4 @@ export default function Header() {
     </header>
   );
 }
+
